@@ -9,6 +9,8 @@ import { GAMES } from '../mock-games';
 })
 export class Component01Component implements OnInit {
   games = GAMES;
+  selectedGame: Game;
+
 
   /*
   game: Game = {
@@ -22,6 +24,10 @@ export class Component01Component implements OnInit {
     }
 
   ngOnInit() {
+  }
+
+  onSelect(game: Game): void {
+  this.selectedGame = game;
   }
 
 }
