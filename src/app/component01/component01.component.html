@@ -7,15 +7,4 @@
 </li>
 </ul>
 
-<div *ngIf="selectedGame">
-
-  <h2>{{ selectedGame.title | uppercase }} Details</h2>
-  <div><span>id: </span>{{selectedGame.id}}</div>
-  <div><span>rating: </span>{{selectedGame.rating}}</div>
-
-  <div>
-    <label>name:
-      <input [(ngModel)]="selectedGame.title" placeholder="name">
-    </label>
-  </div>
-</div>
+<app-game-details [game]="selectedGame"></app-game-details>
