@@ -9,6 +9,7 @@ import { Component03Component } from './component03/component03.component';
 import { GameDetailsComponent } from './game-details/game-details.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AppRoutingModule } from './/app-routing.module';
     Component02Component,
     Component03Component,
     GameDetailsComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

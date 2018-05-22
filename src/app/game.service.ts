@@ -12,8 +12,15 @@ export class GameService {
   constructor(private messageService: MessageService) { }
 
   getGames(): Observable<Game[]> {
-    // TODO: send the message _after_ fetching the games
-    this.messageService.add('GameService: fetched games');
+    // TODO: send the message _after_ fetching the game
+    this.messageService.add('GameService: fetched game id=${id}');
     return of(GAMES);
   }
+
+  getGame(id: number): Observable<Game> {
+    // TODO: send the message _after_ fetching the game
+    this.messageService.add(`GameService: fetched game id=${id}`);
+    return of(GAMES.find(game => game.id === id));
+  }
+
 }

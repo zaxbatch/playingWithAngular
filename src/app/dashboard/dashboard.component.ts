@@ -3,12 +3,12 @@ import { Game } from '../game';
 import { GameService } from '../game.service';
 
 @Component({
-  selector: 'app-component01',
-  templateUrl: './component01.component.html',
-  styleUrls: ['./component01.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: [ './dashboard.component.css' ]
 })
-export class Component01Component implements OnInit {
-  games: Game[];
+export class DashboardComponent implements OnInit {
+  games: Game[] = [];
 
   constructor(private gameService: GameService) { }
 
@@ -18,6 +18,6 @@ export class Component01Component implements OnInit {
 
   getGames(): void {
     this.gameService.getGames()
-      .subscribe(games => this.games = games);
+      .subscribe(games => this.games = games.slice(1, 5));
   }
 }
