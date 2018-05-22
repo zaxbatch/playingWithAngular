@@ -8,6 +8,7 @@ import { Component02Component } from './component02/component02.component';
 import { Component03Component } from './component03/component03.component';
 import { GameDetailsComponent } from './game-details/game-details.component';
 import { MessagesComponent } from './messages/messages.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MessagesComponent } from './messages/messages.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
