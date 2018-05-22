@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from '../game';
-import { GAMES } from '../mock-games';
+import { GameService } from '../game.service';
 
 @Component({
   selector: 'app-component01',
@@ -8,26 +8,24 @@ import { GAMES } from '../mock-games';
   styleUrls: ['./component01.component.css']
 })
 export class Component01Component implements OnInit {
-  games = GAMES;
+  //games = GAMES;
   selectedGame: Game;
+  games: Game[];
 
-
-  /*
-  game: Game = {
-    id: 1,
-    title: 'Mario',
-    rating: 4.5
-  }
-*/
-  constructor() {
+  constructor(private gameService: GameService) {
 
     }
 
   ngOnInit() {
+    this.getGames();
   }
 
   onSelect(game: Game): void {
-  this.selectedGame = game;
+    this.selectedGame = game;
   }
 
+  getGames(): void {
+    this.gameService.getGames()
+      .subscribe(games => this.games = games);
+  }
 }
